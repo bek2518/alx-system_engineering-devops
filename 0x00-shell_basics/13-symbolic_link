@@ -1,2 +1,2 @@
 #!/bin/bash
-ls _ls_
+ls -Alhr --time-style=+"" _ls_
