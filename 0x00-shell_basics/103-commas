@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -am -d */ | sort
+ls -am */ | sort
