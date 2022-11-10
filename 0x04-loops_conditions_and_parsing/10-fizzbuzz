@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Displays numbers 1 to 100
+# Display FizzBuzz when number multiple of 3 and 5
+# Display Fizz when number multiple of 3
+# Display Buzz when number multiple of 5
+
+i="0"
+while [ $i -le 99 ]
+do
+	i=$(( i + 1 ))
+	fizz=$(( i % 3 ))
+	buzz=$(( i % 5 ))
+	if (( fizz == 0 )) && (( buzz == 0 ))
+	then
+		echo "FizzBuzz"
+	elif [ $fizz == 0 ]
+	then
+		echo "Fizz"
+	elif [ $buzz == 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $i
+	fi
+done
