@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Bash script that loops 1 to 10 and display
+# bad luck for the 4th loop iteration
+# good luck  fir the 8th loop iteration
+# Best School for the other iterations
+
+i="0"
+while [ $i -le 19 ]
+do
+	i=$(( i + 1 ))
+	echo $i
+	case $i in
+		4)
+			echo 'bad luck from China'
+			;;
+		9)
+			echo 'bad luck from Japan'
+			;;
+		17)
+			echo 'bad luck from Italy'
+			;;
+	esac
+done
