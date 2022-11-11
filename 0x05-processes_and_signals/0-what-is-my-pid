@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that dislays it own PID
+
+ps $$
