@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Terminates To infinity and beyond
+
+pkill -f "7-highlander"
