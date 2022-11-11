@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Terminates To infinity and beyond
+
+pkill -f "4-to-infinity_and_beyond"
