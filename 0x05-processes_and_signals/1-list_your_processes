@@ -2,3 +2,4 @@
 # Bash script that dislays list of currently running processes
 
 top
+pstree
