@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Bash script that displays PID whose name contain bash without using ps
+
+pgrep -l "bash"
