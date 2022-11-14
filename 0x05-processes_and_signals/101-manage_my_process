@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# when start argument passed starts manage_my_process
+# when stop argument passed stops manage_my_process
+# when restart argument passed stops and starts manage_my_process
+
+if [ "$1" == "start" ]
+then
+	/tmp/manage_my_process
+	echo $$ > /var/run/my_process.pid
+	echo "manage_my_process started"
+elif [ "$1" == "stop" ]
+then
+	pkill -f manage_my_process
+	rm -f /var/run/_myprocess.pid
+	echo "manage_my_process stopped"
+elif [ "$1" == "restart" ]
+then
+	pkill -f manage_my_process
+	rm -f /var/run/my_process.pid
+	/tmp/manage_my_process
+	echo $$ > /var/run/my_process.pid
+	echo "manage_my_process restarted"
+else
+	echo "Usage: manage_my_process {start|stop|restart}"
+fi
