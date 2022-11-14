@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# Terminates highlander
-
-kill -9 "$(pgrep -f "7-highlander")"
