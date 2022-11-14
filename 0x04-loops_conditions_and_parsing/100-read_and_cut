@@ -3,5 +3,5 @@
 
 while read -r line
 do
-	echo "$line" | cut -d':' -f1 -f4 -f7
+	echo "$line" | cut -d':' -f1 -f3 -f6
 done < /etc/passwd
