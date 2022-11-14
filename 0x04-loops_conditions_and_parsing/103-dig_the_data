@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Bash script that displays visitor IP with HTTP status
+# from apache log access files
+
+awk '{ print $1,$9 }' apache-access.log | sort | uniq -c | sort -rn
