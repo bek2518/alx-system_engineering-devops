@@ -1,9 +1,7 @@
 # Make change to configuration file using puppet
 
-file { '/etc/ssh/ssh_config':
-  ensure => present
-}=>
-file_line { 'Append a line to /etc/ssh/ssh_config':
-  path => '/etc/ssh/ssh_config',
-  line => '\tIdentityFile ~/.ssh/school\nPasswordAuthentication no'
+exec { 'echo':
+  command => 'echo "    IdentityFile ~/.ssh/school\n
+  PasswordAuthentication no" >> /etc/ssh/ssh_config'
+  path    => '/etc/ssh/ssh_config'
 }
