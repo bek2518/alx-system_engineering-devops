@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Redirect to another page
+
+sudo apt -y update
+sudo apt -y install nginx
+echo "Hello World!" > /var/www/html/index.html
+
+REDIRECT="location /redirect_me {\n return 301 https://www.youtube.com/watch?v=anjTd9mraeA;\n}\n"
+
+sudo sed -i "30i $REDIRECT" /etc/nginx/sites-available/default
+sudo service nginx start
