@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fixes issue with web server by starting apache
+
+sudo service apache2 start
