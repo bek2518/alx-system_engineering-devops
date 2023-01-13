@@ -2,7 +2,7 @@
 
 exec { 'installation':
   provider => shell,
-  command  => 'sudo apy -y update ; sudo apt -y install nginx ; sudo echo 
+  command  => 'sudo apy -y update ; sudo apt -y install nginx ; echo 
   "Hello World!" > /var/www/html/index.html'
 }
 
