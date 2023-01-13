@@ -9,7 +9,7 @@ echo "Hello World!" > /var/www/html/index.html
 
 REDIRECT=\
 "server {
-        listen 80;
+        listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
@@ -22,10 +22,10 @@ REDIRECT=\
         }
 }"
 
-bash -c "echo -e '$REDIRECT' > /etc/nginx/sites-available/default"
+bash -c "echo -e '$REDIRECT' > /etc/nginx/sites-enabled/default"
 if [ "$(pgrep -c nginx)" -le 0 ]
 then
-        service nginx start
+        sudo service nginx start
 else
         sudo service nginx restart
 fi
