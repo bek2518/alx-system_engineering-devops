@@ -3,9 +3,8 @@
 
 sudo apt -y update
 sudo apt -y install nginx
-sudo ufw allow 'Nginx HTTP'
-sudo chmod -R 755 /var/www
 echo "Hello World!" > /var/www/html/index.html
+sudo service nginx start
 
 REDIRECT=\
 "server {
@@ -23,9 +22,4 @@ REDIRECT=\
 }"
 
 bash -c "echo -e '$REDIRECT' > /etc/nginx/sites-enabled/default"
-if [ "$(pgrep -c nginx)" -le 0 ]
-then
-        sudo service nginx start
-else
-        sudo service nginx restart
-fi
+sudo service nginx restart
