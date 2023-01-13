@@ -15,3 +15,5 @@ No | File | Description
 1 | 0-transfer_file | Script that transfers file from client to server
 2 | 1-install_nginx_web_server | Install nginx web server
 3 | 2-setup_a_domain_name | Setup a .tech domain name
+4 | 3-redirection | Configures a new server and redirects to another page
+5 | 4-not_found_page_404 | Based on the redirect and adds custom 404 page

@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Redirect to another page
+# Configures Nginx server to have a custom 404 page
 
 sudo apt -y update
 sudo apt -y install nginx
 echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
-REDIRECT=\
+ERROR_PAGE=\
 "server {
         listen 80;
         listen [::]:80 default_server;
@@ -18,7 +19,11 @@ REDIRECT=\
         if (\$request_filename ~ redirect_me){
                 rewrite ^ https://www.youtube.com/watch?v=IotUxgPqbik permanent;
         }
+        error_page 404 /404.html
+        location /404.html {
+                internal;
+        }
 }"
 
-bash -c "echo -e '$REDIRECT' > /etc/nginx/sites-available/default"
+bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-available/default"
 sudo service nginx start
