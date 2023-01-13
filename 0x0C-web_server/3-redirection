@@ -3,6 +3,7 @@
 
 sudo apt -y update
 sudo apt -y install nginx
+sudo ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
 
 REDIRECT=\
@@ -21,4 +22,9 @@ REDIRECT=\
 }"
 
 bash -c "echo -e '$REDIRECT' > /etc/nginx/sites-available/default"
-sudo service nginx restart
+if [ "$(pgrep -c nginx)" -le 0 ]
+then
+        service nginx start
+else
+        sudo service nginx restart
+fi
