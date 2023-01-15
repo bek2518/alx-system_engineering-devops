@@ -26,5 +26,5 @@ ERROR_PAGE=\
         }
 }"
 
-bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-available/default"
+bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-enabled/default"
 sudo service nginx restart

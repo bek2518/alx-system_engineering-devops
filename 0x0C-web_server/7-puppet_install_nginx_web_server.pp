@@ -3,7 +3,7 @@
 exec { 'installation':
   provider => shell,
   command  => 'sudo apy -y update ; sudo apt -y install nginx ; echo 
-  "Hello World!" > /var/www/html/index.html'
+  "Hello World!" > /var/www/html/index.html ; sudo service nginx start'
 }
 
 file { 'configuration':
@@ -22,7 +22,7 @@ file { 'configuration':
         }'
 }
 
-exec { 'start service':
+exec { 'restart service':
   provider => shell,
-  command  => sudo service nginx start
+  command  => sudo service nginx restart
 }
