@@ -6,8 +6,9 @@ exec { 'installation':
   "Hello World!" > /var/www/html/index.html ; sudo service nginx start'
 }
 
-file { /etc/nginx/sites-enabled/default:
+file { 'Configuration':
   ensure  => present,
+  path    => '/etc/nginx/sites-enabled/default',
   content => 'server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -19,7 +20,8 @@ file { /etc/nginx/sites-enabled/default:
         }
         if (\$request_filename ~ redirect_me){
                 rewrite ^ https://www.youtube.com/watch?v=IotUxgPqbik permanent;
-        }'
+        }
+    }'
 }
 
 
@@ -27,4 +29,4 @@ file { /etc/nginx/sites-enabled/default:
 exec { 'restart service':
   provider => shell,
   command  => sudo service nginx restart
-}
+  }
