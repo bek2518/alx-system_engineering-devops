@@ -6,10 +6,10 @@ exec { 'installation':
   "Hello World!" > /var/www/html/index.html ; sudo service nginx start'
 }
 
-file { 'configuration':
+file { /etc/nginx/sites-enabled/default:
   ensure  => present,
   content => 'server {
-        listen 80;
+        listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
@@ -21,6 +21,8 @@ file { 'configuration':
                 rewrite ^ https://www.youtube.com/watch?v=IotUxgPqbik permanent;
         }'
 }
+
+
 
 exec { 'restart service':
   provider => shell,
