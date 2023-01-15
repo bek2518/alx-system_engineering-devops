@@ -4,8 +4,9 @@
 sudo apt -y update
 sudo apt -y install nginx
 echo "Hello World!" > /var/www/html/index.html
-echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo service nginx start
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 ERROR_PAGE=\
 "server {
