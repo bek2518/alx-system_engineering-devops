@@ -6,8 +6,6 @@ sudo apt -y install nginx
 echo "Hello World!" > /var/www/html/index.html
 sudo service nginx start
 
-echo "Ceci n'est pas une page" > /var/www/html/404.html
-
 ERROR_PAGE=\
 "server {
         listen 80 default_server;
@@ -26,6 +24,8 @@ ERROR_PAGE=\
                 internal;
         }
 }"
+
+echo "Ceci n'est pas une page" > /var/www/html/404.html
 
 bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-enabled/default"
 sudo service nginx restart
