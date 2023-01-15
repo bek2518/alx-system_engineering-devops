@@ -7,9 +7,10 @@ exec { 'installation':
 }
 
 file { 'Configuration':
-  ensure  => present,
+  ensure  => file,
   path    => '/etc/nginx/sites-enabled/default',
-  content => 'server {
+  content => 
+  'server {
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/html;
