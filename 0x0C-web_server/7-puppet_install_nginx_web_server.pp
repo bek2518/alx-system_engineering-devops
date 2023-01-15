@@ -28,5 +28,5 @@ file { 'Configuration':
 
 exec { 'restart service':
   provider => shell,
-  command  => sudo service nginx restart
+  command  => 'sudo service nginx restart'
   }
