@@ -18,7 +18,7 @@ backend myservers
         server 75516-web-02 18.209.224.64:80 check
 "
 
-bash -c "echo -e '$CONFIGURATION' >> /etc/haproxy/haproxy.conf"
+bash -c "echo -e '$CONFIGURATION' >> /etc/haproxy/haproxy.cfg"
 
 echo "ENABLED=1" >> /etc/init.d/haproxy
 
