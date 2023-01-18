@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+# Configures a brand new ubuntu machine to install Nginx
+# Adds custom header to Nginx serverresponse
+
+sudo apt -y update
+sudo apt -y install nginx
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo service nginx start
+
+ERROR_PAGE=\
+"server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+        server_name _;
+        location / {
+				add_header X-Served-By "$hostname"
+                try_files \$uri \$uri/ =404;
+        }
+        if (\$request_filename ~ redirect_me){
+                rewrite ^ https://www.youtube.com/watch?v=IotUxgPqbik permanent;
+        }
+        error_page 404 /404.html;
+        location /404.html {
+                internal;
+        }
+}"
+
+bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-enabled/default"
+sudo service nginx restart
