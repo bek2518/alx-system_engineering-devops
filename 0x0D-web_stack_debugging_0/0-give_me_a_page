@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # Fixes issue with web server by starting apache
-
+echo "ServerName localhost" >> /etc/apache2.conf
 sudo service apache2 start
