@@ -20,6 +20,6 @@ backend myservers
 
 bash -c "echo -e '$CONFIGURATION' >> /etc/haproxy/haproxy.cfg"
 
-echo "ENABLED=1" >> /etc/init.d/haproxy
+echo "ENABLED=1" >> /etc/default/haproxy
 
 sudo service haproxy restart
