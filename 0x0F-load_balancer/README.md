@@ -12,4 +12,4 @@ Intoduces to Load Balancer
 ---
 No | File | Description
 ---|---|---
-1 | 
+1 | 0-custom_http_response_header | Configures brand new server and aaaadds a custom Nginx response header
