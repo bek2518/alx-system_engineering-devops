@@ -8,7 +8,7 @@ echo "Hello World!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sudo service nginx start
 
-ERROR_PAGE=\
+CUSTOM_HEADER=\
 "server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -28,5 +28,5 @@ ERROR_PAGE=\
         }
 }"
 
-bash -c "echo -e '$ERROR_PAGE' > /etc/nginx/sites-enabled/default"
+bash -c "echo -e '$CUSTOM_HEADER' > /etc/nginx/sites-enabled/default"
 sudo service nginx restart

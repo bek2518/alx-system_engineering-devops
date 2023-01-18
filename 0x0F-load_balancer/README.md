@@ -13,3 +13,4 @@ Intoduces to Load Balancer
 No | File | Description
 ---|---|---
 1 | 0-custom_http_response_header | Configures brand new server and aaaadds a custom Nginx response header
+2 | 1-install_load_balancer | Installs Load balancer and configures it on server lb-01
