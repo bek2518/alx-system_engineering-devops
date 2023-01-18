@@ -10,6 +10,7 @@ CONFIGURATION=\
 "
 frontend myfrontend
         bind *:80
+        mode http
         default_backend myservers
 
 backend myservers
