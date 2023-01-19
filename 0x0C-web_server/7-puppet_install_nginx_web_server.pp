@@ -1,15 +1,18 @@
 # Installs Nginx server and configures redirect
 
 exec { 'installation':
-  command  => 'sudo apt -y update ; sudo apt -y install nginx ; echo 
-  "Hello World!" | sudo tee /var/www/html/index.html ; sudo service nginx start',
+  command  => 'sudo apt -y update ; sudo apt -y install nginx ; sudo service nginx start',
   provider => shell,
+}
+
+file { '/var/www/html/index.html':
+  content => 'Hello World!',
 }
 
 file { 'Configuration':
   ensure  => file,
   path    => '/etc/nginx/sites-enabled/default',
-  content => 
+  content =>
   'server {
         listen 80 default_server;
         listen [::]:80 default_server;
