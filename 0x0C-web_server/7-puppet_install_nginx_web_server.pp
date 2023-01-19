@@ -5,8 +5,8 @@ exec { 'installation':
   provider => shell,
 }
 
-file {'/var/www/html/index.html':
-  ensure => file,
+file { '/var/www/html/index.html':
+  ensure  => file,
   content => 'Hello World!',
 }
 
@@ -17,8 +17,7 @@ exec { 'start nginx':
 
 file { '/etc/nginx/sites-enabled/default':
   ensure  => file,
-  content => 
-  'server {
+  content => 'server {
         listen 80 default_server;
         listen [::]:80 default_server;
         root /var/www/html;
@@ -32,7 +31,6 @@ file { '/etc/nginx/sites-enabled/default':
         }
     }'
 }
-
 
 exec { 'restart service':
   provider => shell,
