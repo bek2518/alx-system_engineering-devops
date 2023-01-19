@@ -2,7 +2,7 @@
 
 exec { 'installation':
   command  => 'sudo apt -y update ; sudo apt -y install nginx ; echo 
-  "Hello World!" > /var/www/html/index.html ; sudo service nginx start',
+  "Hello World!" | sudo tee /var/www/html/index.html ; sudo service nginx start',
   provider => shell,
 }
 
@@ -24,8 +24,6 @@ file { 'Configuration':
         }
     }'
 }
-
-
 
 exec { 'restart service':
   provider => shell,
