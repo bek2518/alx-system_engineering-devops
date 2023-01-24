@@ -2,7 +2,7 @@
 # Bash script that displays information about subdomains
 
 finder () {
-	dig "$2"."$1" | grep -A1 'ANSWER SECTION' | tail -1 | awk -v sd="$2" 'BEGIN { F = " " } ; { print " The subdomain " sd " is a " $4 " record and points to " $5}'
+	dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v sd="$2" 'BEGIN { F = " " } ; { print " The subdomain " sd " is a " $4 " record and points to " $5}'
 }
 
 if [ "$#" == 1 ]
