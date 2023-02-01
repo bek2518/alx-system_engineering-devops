@@ -13,4 +13,5 @@ Understand MySQL
 ---
 No | File | Description
 ---|---|---
-
+1 | 4-mysql_configuration_primary | Configuration file for Master
+2 | 4-mysql_configuration_replica | Configuration file for Slave
