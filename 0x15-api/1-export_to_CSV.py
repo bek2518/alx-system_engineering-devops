@@ -10,8 +10,8 @@ if __name__ == '__main__':
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
-    user_response = requests.get(f"{url}/users/{employee_id}")
-    response = requests.get(f"{url}/users/{employee_id}/todos")
+    user_response = requests.get("{}/users/{}".format(url, employee_id))
+    response = requests.get("{}/users/{}/todos".format(url, employee_id))
     name = user_response.json()["name"]
     tasks = [task for task in response.json()]
 
@@ -20,5 +20,6 @@ if __name__ == '__main__':
             completed = task['completed']
             title = task['title']
             f.write(
-                f'"{employee_id}","{name}","{completed}",{title}\n'
+                '"{}","{}","{}",{}\n'
+                .format(employee_id, name, completed, title)
             )
