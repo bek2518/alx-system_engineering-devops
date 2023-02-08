@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
-    Python script that for a given employee ID returns information
-'''
+"""
+Python script that for a given employee ID returns information
+"""
 
 
 if __name__ == "__main__":
