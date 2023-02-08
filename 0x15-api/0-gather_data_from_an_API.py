@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """
-This script displays user's TODO list using {JSON} placeholder REST API
+This script displays user's TODO list using {JSON} Placeholder REST API
 """
 
 
-def get_employee_todo():
+def main():
     """
     Returns information about TODO list progress of given employee ID
     using a REST API
@@ -12,18 +12,18 @@ def get_employee_todo():
     import requests
     import sys
 
-    employee_id = sys.argv[1]
-    user_response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(employee_id))
-    response = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id))
+    employee_id = int(sys.argv[1])
+    user = requests.get('https://jsonplaceholder.typicode.com/users/' +
+                        '{}'.format(employee_id))
+    response = requests.get('https://jsonplaceholder.typicode.com/todos' +
+                         '?userId={}'.format(employee_id))
 
-    name = user_response.json()["name"]
-    comp_tasks = [task for task in response.json() if task["completed"]]
-    tasks = len(response.json())
-
-    print(f"Employee {name} is done with tasks({len(comp_tasks)}/{tasks}):")
-    for task in comp_tasks:
-        print(f"\t {task['title']}")
+    done = [task for task in response.json() if task.get('completed', False)]
+    print("Employee {} is done with tasks".format(user.json().get('name')) +
+          "({}/{}):".format(len(done), len(response.json())))
+    for task in done:
+        print("\t {}".format(task.get('title')))
 
 
-if __name__ == "__main__":
-    get_employee_todo()
+if __name__ == '__main__':
+    main()
