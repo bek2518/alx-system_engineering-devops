@@ -20,6 +20,6 @@ if __name__ == '__main__':
             completed = task['completed']
             title = task['title']
             f.write(
-                '"{}","{}","{}",{}\n'
+                '"{}","{}","{}","{}"\n'
                 .format(employee_id, name, completed, title)
             )
