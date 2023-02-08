@@ -12,11 +12,9 @@ def get_employee_todo():
     import requests
     import sys
 
-    url = "https://jsonplaceholder.typicode.com"
     employee_id = sys.argv[1]
-
-    user_response = requests.get(f"{url}/users/{employee_id}")
-    response = requests.get(f"{url}/users/{employee_id}/todos")
+    user_response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(employee_id))
+    response = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id))
 
     name = user_response.json()["name"]
     comp_tasks = [task for task in response.json() if task["completed"]]
