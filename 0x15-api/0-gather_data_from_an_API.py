@@ -3,8 +3,8 @@
 Python script that for a given employee ID returns information
 about his/her TODO list progress
 '''
-import requests
 from sys import argv
+import requests
 
 
 def get_employee_todo_progress(employee_id=argv[1]):
