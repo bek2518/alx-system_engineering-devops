@@ -11,8 +11,10 @@ if __name__ == '__main__':
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
-    user_response = requests.get(f"{url}/users/{employee_id}").json()
-    response = requests.get(f"{url}/users/{employee_id}/todos").json()
+    user_response = requests.get("{}/users/{}"
+                                 .format(url, employee_id)).json()
+    response = requests.get("{}/users/{}/todos"
+                            .format(url, employee_id)).json()
 
     with open("{}.json".format(employee_id), "w") as f:
         json.dump({employee_id: [{

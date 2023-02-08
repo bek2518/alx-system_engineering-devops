@@ -10,7 +10,7 @@ from sys import argv
 if __name__ == '__main__':
     url = "https://jsonplaceholder.typicode.com"
 
-    user_response = requests.get(f"{url}/users/").json()
+    user_response = requests.get("{}/users/".format(url)).json()
 
     with open("todo_all_employees.json", "w") as f:
         json.dump({user.get("id"): [{
