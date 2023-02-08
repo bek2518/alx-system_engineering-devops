@@ -4,13 +4,12 @@ Requests https://jsonplaceholder.typicode.com/ for information
 about employee TODO progress
 """
 
+import requests
+import sys
 
 if __name__ == '__main__':
-    from sys import argv
-    import requests
-
     url = "https://jsonplaceholder.typicode.com"
-    employee_id = argv[1]
+    employee_id = sys.argv[1]
 
     user_response = requests.get(f"{url}/users/{employee_id}")
     response = requests.get(f"{url}/users/{employee_id}/todos")
