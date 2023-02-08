@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-    Python script that for a given employee ID returns information
+    Python script that for a given 
+    employee ID returns information
     about his/her TODO list progress
 """
 from sys import argv
 import requests
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     """
         Function that requests to the jsonplaceholder.typicode.com website
         Displays the todo list based on the employee id given 
