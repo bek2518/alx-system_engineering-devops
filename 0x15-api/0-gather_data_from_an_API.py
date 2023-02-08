@@ -2,11 +2,12 @@
 '''
     Python script that for a given employee ID returns information
 '''
-from sys import argv
-import requests
 
 
 if __name__ == "__main__":
+    from sys import argv
+    import requests
+
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
