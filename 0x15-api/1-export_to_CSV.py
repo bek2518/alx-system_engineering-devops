@@ -6,8 +6,9 @@ import requests
 from sys import argv
 
 
-"""Module documentation"""
+"""Module documentation Python script that exports data in CSV format"""
 if __name__ == '__main__':
+    """Module documentation 2 Python script that exports data in CSV format"""
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
