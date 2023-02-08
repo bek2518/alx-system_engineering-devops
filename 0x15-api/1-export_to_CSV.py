@@ -12,7 +12,8 @@ if __name__ == '__main__':
 
     user_response = requests.get("{}/users/{}".format(url, employee_id))
     response = requests.get("{}/users/{}/todos".format(url, employee_id))
-    name = user_response.json()["name"]
+
+    user_name = user_response.json()["username"]
     tasks = [task for task in response.json()]
 
     with open('{}.csv'.format(employee_id), 'w') as f:
@@ -21,5 +22,5 @@ if __name__ == '__main__':
             title = task['title']
             f.write(
                 '"{}","{}","{}","{}"\n'
-                .format(employee_id, name, completed, title)
+                .format(employee_id, user_name, completed, title)
             )
