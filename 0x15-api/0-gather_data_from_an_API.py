@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Python script that for a given 
+    Python script that for a given
     employee ID returns information
     about his/her TODO list progress
 """
@@ -9,10 +9,6 @@ import requests
 
 
 if __name__ == '__main__':
-    """
-        Function that requests to the jsonplaceholder.typicode.com website
-        Displays the todo list based on the employee id given 
-    """
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
