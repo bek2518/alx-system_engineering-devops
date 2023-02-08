@@ -1,13 +1,17 @@
 #!/usr/bin/python3
 """
-    This script returns information about TODO list by using employee ID
+This script displays user's TODO list using REST API
 """
 
-import requests
-import sys
 
+def get_employee_todo():
+    """
+    Returns information about TODO list progress of given employee ID
+    using a REST API
+    """
+    import requests
+    import sys
 
-if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com"
     employee_id = sys.argv[1]
 
@@ -21,3 +25,7 @@ if __name__ == "__main__":
     print(f"Employee {name} is done with tasks({len(comp_tasks)}/{tasks}):")
     for task in comp_tasks:
         print(f"\t {task['title']}")
+
+
+if __name__ == "__main__":
+    get_employee_todo()
