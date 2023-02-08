@@ -6,6 +6,7 @@ import requests
 from sys import argv
 
 
+"""Module documentation"""
 if __name__ == '__main__':
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
