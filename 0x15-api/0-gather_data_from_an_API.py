@@ -6,7 +6,7 @@ from sys import argv
 import requests
 
 
-if __name__ == '__main__':
+if '__name__' == '__main__':
     url = "https://jsonplaceholder.typicode.com"
     employee_id = argv[1]
 
