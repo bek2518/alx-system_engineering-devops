@@ -1,16 +1,11 @@
 #!/usr/bin/python3
 """
-
-Python script that for a given employee ID returns information
-
+Requests https://jsonplaceholder.typicode.com/ for information
+about employee TODO progress
 """
 
 
-def get_employee_todo():
-    """
-    Using REST API, for a given employee ID returns information about
-    his/her todo list progress
-    """
+if __name__ == '__main__':
     from sys import argv
     import requests
 
@@ -27,7 +22,3 @@ def get_employee_todo():
     print(f"Employee {name} is done with tasks({len(comp_tasks)}/{tasks}):")
     for task in comp_tasks:
         print(f"\t {task['title']}")
-
-
-if __name__ == '__main__':
-    get_employee_todo()
