@@ -4,7 +4,11 @@ Python script that for a given employee ID returns information
 """
 
 
-if __name__ == "__main__":
+def get_employee_todo():
+    """
+    Using REST API, for a given employee ID returns information about
+    his/her todo list progress
+    """
     from sys import argv
     import requests
 
@@ -21,3 +25,7 @@ if __name__ == "__main__":
     print(f"Employee {name} is done with tasks({len(comp_tasks)}/{tasks}):")
     for task in comp_tasks:
         print(f"\t {task['title']}")
+
+
+if __name__ == '__main__':
+    get_employee_todo()
