@@ -20,5 +20,5 @@ if __name__ == '__main__':
         json.dump({employee_id: [{
             "task": task.get("title"),
             "completed": task.get("completed"),
-            "username": user_response.get("username")} for task in response]},
-            f)
+            "username": user_response.get("username")}
+            for task in response]}, f)
