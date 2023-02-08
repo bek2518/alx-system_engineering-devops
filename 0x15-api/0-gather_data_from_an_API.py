@@ -13,14 +13,17 @@ def get_employee_todo():
     import sys
 
     employee_id = sys.argv[1]
-    user_response = requests.get("https://jsonplaceholder.typicode.com/users/{}".format(employee_id))
-    response = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos".format(employee_id))
+    url = "https://jsonplaceholder.typicode.com"
+
+    user_response = requests.get("{}/users/{}".format(url, employee_id))
+    response = requests.get("{}/users/{}/todos".format(url, employee_id))
 
     name = user_response.json()["name"]
     comp_tasks = [task for task in response.json() if task["completed"]]
     tasks = len(response.json())
 
-    print("Employee {} is done with tasks({}/{}):".format(name, len(comp_tasks), tasks))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(name, len(comp_tasks), tasks))
     for task in comp_tasks:
         print("\t {}".format(task['title']))
 
