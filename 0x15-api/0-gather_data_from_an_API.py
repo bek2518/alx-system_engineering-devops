@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-Requests https://jsonplaceholder.typicode.com/ for information
-about employee TODO progress
+    This script returns information about TODO list by using employee ID
 """
 
 import requests
 import sys
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     url = "https://jsonplaceholder.typicode.com"
     employee_id = sys.argv[1]
 
