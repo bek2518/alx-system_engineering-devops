@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-Python script that for a given employee ID returns information
+    Python script that for a given employee ID returns information
 '''
 from sys import argv
 import requests
