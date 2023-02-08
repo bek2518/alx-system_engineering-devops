@@ -28,4 +28,7 @@ def get_employee_todo():
 
 
 if __name__ == '__main__':
+    """
+    Executed the code only if it is not imported
+    """
     get_employee_todo()
