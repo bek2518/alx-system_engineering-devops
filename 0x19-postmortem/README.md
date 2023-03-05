@@ -1,5 +1,6 @@
 # Postmortem Report
 <img src=./image1.jpg width=75%>
+
 ## Issue Summary:
 On March 1, 2023, from 2:00 PM to 4:30 PM EAT, the company's online shopping website experiences an outage, rendering the website inaccessible to all users. The impact of the outage was significant, with 100% of the users unable to access the website during the outage.
 
