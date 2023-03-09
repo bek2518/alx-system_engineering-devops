@@ -2,10 +2,10 @@
 
 exec {'Edit nginx default file':
   provider => shell,
-  command  => 'sed -i "s5s/[0-9]\+/$( ulimit -n )/" /etc/default/nginx'
+  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 2000\"/" /etc/default/nginx'
 }
 
 exec {'restart nginx':
   provider => shell,
-  command  => 'service nginx restart'
+  command  => 'sudo service nginx restart'
 }
