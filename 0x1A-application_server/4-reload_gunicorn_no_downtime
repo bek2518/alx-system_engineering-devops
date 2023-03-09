@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Reloads gunicorn simply and cleanly
+
+sudo pkill -HUP -f gunicorn.*master
