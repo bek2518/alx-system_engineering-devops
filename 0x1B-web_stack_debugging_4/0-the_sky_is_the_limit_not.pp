@@ -2,7 +2,7 @@
 
 exec {'Edit nginx default file':
   provider => shell,
-  command  => 'sudo sed -i "s/15/10000" /etc/default/nginx',
+  command  => 'sudo sed -i "s/15/4096" /etc/default/nginx',
   before   => 'restart nginx'
 }
 
