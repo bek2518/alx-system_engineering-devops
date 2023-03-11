@@ -1,11 +1,11 @@
 # Fixes nginx so that it accepts requests without failed requests
 
-exec {'Edit nginx default file':
+exec {'Edit_nginx':
   provider => shell,
-  command  => 'sudo sed -i s/15/4096/g /etc/default/nginx',
+  command  => 'sed -i s/15/4096/g /etc/default/nginx',
 }
 
-exec {'restart nginx':
+exec {'restart_nginx':
   provider => shell,
-  command  => 'sudo service nginx restart'
+  command  => 'service nginx restart'
 }
